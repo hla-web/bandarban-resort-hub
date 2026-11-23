@@ -1,0 +1,21 @@
+{
+  "name": "@bandarban/backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.mjs",
+    "start": "node src/server.mjs",
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "dev:watch": "node --watch src/server.mjs",
+    "create-admin": "node src/create-admin.mjs"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "cors": "^2.8.5",
+    "bcryptjs": "^3.0.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.14.0",
+    "zod": "^4.6.6"
+  }
+}

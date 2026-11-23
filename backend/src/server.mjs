@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+const envFile=new URL('../.env',import.meta.url);if(fs.existsSync(envFile))process.loadEnvFile(envFile);
+import { openDatabase } from './database.mjs';
+import { seedDemo } from './seed.mjs';
+import { createApp } from './app.mjs';
+const db=await openDatabase();
+const demoMode=process.env.NODE_ENV!=='production' && process.env.DEMO_MODE!=='false';
+if(demoMode) await seedDemo(db);
+const app=createApp(db,{demoMode});
+const port=Number(process.env.PORT || 4000);
+const server=app.listen(port,'127.0.0.1',()=>console.log(`Resort Hub API: http://localhost:${port} (${demoMode?'demo payments':'payments disabled'}, ${db.dialect})`));
+for(const signal of ['SIGINT','SIGTERM']) process.on(signal,()=>server.close(async()=>{await db.close();process.exit(0);}));
