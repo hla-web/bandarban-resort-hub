@@ -51,7 +51,7 @@ flowchart LR
 8. The request appears in the correct hotel's **Booking requests** tab. Pending requests hold room inventory. The hotel accepts or declines; the traveler sees the updated status in **My trips**. Views refresh on window focus and at short intervals (15 seconds for management, 20 seconds for customers).
 9. Declining releases inventory and records a full demo advance refund. A traveler cancelling before check-in receives 80% of the advance, with a 20% cancellation fee. Admin completes the simulated refund record.
 
-## Implemented experience
+## Implemented experience:
 
 - Reference-inspired responsive customer homepage with a floating header, original illustrative hillside-lodge hero, cream and sage colors, and a four-column desktop resort grid.
 - Full-page resort details, side-by-side comparison with preference filters, checkout, and booking-request confirmation; layouts adapt for tablet and mobile.
