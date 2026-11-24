@@ -30,7 +30,7 @@ Demo accounts are seeded only in local demo mode, and only into an empty databas
 
 The portals use separate HttpOnly session cookies, so you can keep an admin, hotel, and customer session open at the same time. Data is persisted in `backend/.data/resort-hub.sqlite`; uploaded photos are stored in `backend/.data/uploads/`. These files are gitignored. Tests use a separate in-memory database and temporary upload directory.
 
-## How data flows
+## How data flows:
 
 ```mermaid
 flowchart LR
